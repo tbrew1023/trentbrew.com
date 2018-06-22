@@ -1,7 +1,7 @@
 <template>
   <div id="portfolio-container">
     <div id="portfolio-container-inner">
-      <h1>Portfolio</h1>
+      <div id="portfolio-chunk1" class="portfolio-chunk"></div>
     </div>
   </div>
 </template>
@@ -18,11 +18,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/_variables';
+
 #portfolio-container {
   position: absolute;
-  background-color: #FF8A65;
+  background-color: #ef5350;
   width: 100vw;
   height: 100vh;
+  color: $ColorWhite;
 }
 
 #portfolio-container-inner {

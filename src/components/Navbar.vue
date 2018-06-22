@@ -2,7 +2,7 @@
   <div id="navbar-container">
     <ul>
       <router-link v-for="tab in tabs" v-on:click.native="handleClick(tab)" :to="tab.path">
-        <li :class="{selected: tab.selected}"><span>{{tab.title}}</span></li>
+        <li :id="tab.title" :class="{selected: tab.selected}"><span>{{tab.title}}</span></li>
       </router-link>
     </ul>
   </div>
@@ -72,12 +72,29 @@ export default {
       padding: 0px 15px 0px 15px;
       border-radius: $Rounded;
       transition: 150ms;
+    }
 
-      &:hover {
-        //background-color: $ColorDarken;
-        span {
-          color: $ColorLightGray;
-        }
+    #Home:hover {
+      span {
+        color: #64B5F6;
+      }
+    }
+
+    #Portfolio:hover {
+      span {
+        color: #ef9a9a;
+      }
+    }
+
+    #Resume:hover {
+      span {
+        color: #A5D6A7;
+      }
+    }
+
+    #Contact:hover {
+      span {
+        color: #FFF176;
       }
     }
   }
@@ -88,6 +105,7 @@ export default {
 
     span {
       font-size: $NavFontSize;
+      font-weight: bold;
       padding: 0px 0px 10px 0px;
       color: $ColorLightGray;
       transition: 150ms;
@@ -96,7 +114,7 @@ export default {
 
   .selected {
     span {
-      border-bottom: solid $IndicatorHeight $ColorLightGray;
+      border-bottom: solid $IndicatorHeight $ColorWhite;
     }
   }
 }
