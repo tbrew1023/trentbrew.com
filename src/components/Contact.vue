@@ -52,9 +52,9 @@ h2 {
 
 p {
   padding: 0px;
-  margin: 0px 0px 40px 0px;
+  margin: 0px 0px 60px 0px;
   color: $ColorWhite;
-  //opacity: 0.6;
+  opacity: 0.6;
 }
 
 a {

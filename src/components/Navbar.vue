@@ -58,8 +58,9 @@ export default {
   width: 100%;
   height: $NavHeight;
   line-height: $NavHeight;
-  margin: 10px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
   z-index: 10;
+  box-shadow: inset 0px 45px 40px -20px rgba(0,0,0,0.2);
 
   ul {
     display: inline-flex;
@@ -107,7 +108,7 @@ export default {
       font-size: $NavFontSize;
       font-weight: bold;
       padding: 0px 0px 10px 0px;
-      color: $ColorLightGray;
+      color: $ColorWhite;
       transition: 150ms;
     }
   }

@@ -10,7 +10,7 @@
       <div id="banner1" class="banner">
         <div id="text1" class="text">
           <h2>Hi!</h2>
-          <p>My name is Trent :) I'm a Font-end Software Developer, Graphic Designer, and UX Specialist.</p>
+          <p>My name is <strong>Trent</strong> :) I'm a Font-end Software Developer, Graphic Designer, and UX Specialist.</p>
           <div class="arrow-container"><div class="arrow arrow1"></div><div class="arrow arrow2"></div></div>
         </div>
       </div>
@@ -98,219 +98,230 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables';
 
-#home-container {
-  position: absolute;
-  background-color: #3F51B5;
-  width: 100%;
-  height: 100vh;
-}
 
-#home-container-inner {
-  margin: 0px 0px 0px 0px;
-
-  .banner {
+@media only screen and (min-width: 768px) {
+  #home-container {
+    position: absolute;
+    background-color: #3F51B5;
+    width: 100%;
     height: 100vh;
+  }
 
-    p {
+  #home-container-inner {
+    margin: 0px 0px 0px 0px;
+
+    .banner {
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+      p {
+        opacity: 0.6;
+      }
+    }
+
+    #banner1 {
+      background-color: #1565C0;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited).jpg");
+    }
+
+    #banner2 {
+      background-color: #0D47A1;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited)-extra3.jpg");
+    }
+
+    #banner3 {
+      background-color: #1565C0;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited)-extra2.jpg");
+    }
+
+    #banner4 {
+      background-color: #0D47A1;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited)-extra1.jpg");
+    }
+
+    .text {
+      color: $ColorLightGray;
+      text-align: left;
+      width: 420px;
+      margin: 0px 0px 0px 300px;
+
+      p {
+        line-height: 25px;
+      }
+
+      a {
+        color: $ColorWhite;
+      }
+
+      h2 {
+        margin: 0px;
+        padding: 0px;
+        font-size: 40px;
+      }
+    }
+
+    #text1 {
+      padding-top: 40vh;
+    }
+
+    #text2 {
+      padding-top: 28vh;
+    }
+
+    #text3 {
+      padding-top: 29vh;
+    }
+
+    #text4 {
+      padding-top: 35vh;
+    }
+
+    #social-bubbles {
+      //background-color: red;
+      display: inline-flex;
+
+      .sm-bubble {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: black;
+        opacity: 0.4;
+        margin: 4px;
+
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+
+      #sm-bubble-fb {
+        background-image: url("https://image.freepik.com/free-icon/circle-facebook_318-10967.jpg");
+        background-position: center;
+        background-size: contain;
+      }
+      #sm-bubble-tw {
+        background-image: url("https://image.freepik.com/free-icon/social-twitter-in-acircle-logo_318-28676.jpg");
+        background-position: center;
+        background-size: contain;
+      }
+      #sm-bubble-ig {
+        background-image: url("https://i0.wp.com/www.traveloffpath.com/wp-content/uploads/2017/11/instagram-icon-white-on-black-circle.png?ssl=1");
+        background-position: center;
+        background-size: contain;
+      }
+      #sm-bubble-pt {
+        background-image: url("https://image.freepik.com/free-icon/pinterest-round_318-26597.jpg");
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+
+  .arrow-container {
+    position: absolute;
+    //background-color: black;
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    top: 200px;
+    left: 230px;
+    bottom: 0;
+  }
+
+  .arrow {
+    opacity: 0;
+    position: relative;
+    left: 42%;
+    top: 55%;
+    transition: visibility 500ms linear;
+  }
+
+  .arrow1 {
+    animation: arrow-movement 2s ease-in-out infinite;
+  }
+  .arrow2 {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+  }
+
+  .arrow:before,
+  .arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+  }
+
+  .arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+  }
+
+  .arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+  }
+
+  // Animation
+  @keyframes arrow-movement {
+    0% {
+      opacity: 0;
+      top: 45%;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #home-indicator-container {
+    position: fixed;
+    height: 90px;
+    color: $ColorWhite;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    left: 140px;
+
+    .ind {
+      margin: 5px;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      border: solid $ColorWhite 2px;
       opacity: 0.6;
     }
   }
 
-  #banner1 {
-    background-color: #1565C0;
-  }
-
-  #banner2 {
-    background-color: #0D47A1;
-  }
-
-  #banner3 {
-    background-color: #1565C0;
-  }
-
-  #banner4 {
-    background-color: #0D47A1;
-  }
-
-  .text {
-    color: $ColorLightGray;
-    text-align: left;
-    width: 420px;
-    margin: 0px 0px 0px 300px;
-
-    p {
-      line-height: 25px;
-    }
-
-    a {
-      color: $ColorWhite;
-    }
-
-    h2 {
-      margin: 0px;
-      padding: 0px;
-      font-size: 40px;
+  .banner1active {
+    #ind1 {
+      background-color: $ColorWhite;
     }
   }
 
-  #text1 {
-    padding-top: 40vh;
-  }
-
-  #text2 {
-    padding-top: 28vh;
-  }
-
-  #text3 {
-    padding-top: 29vh;
-  }
-
-  #text4 {
-    padding-top: 35vh;
-  }
-
-  #social-bubbles {
-    //background-color: red;
-    display: inline-flex;
-
-    .sm-bubble {
-      width: 40px;
-      height: 40px;
-      border-radius: 100%;
-      background-color: black;
-      opacity: 0.4;
-      margin: 4px;
-
-      &:hover {
-        opacity: 0.2;
-      }
-    }
-
-    #sm-bubble-fb {
-      background-image: url("https://image.freepik.com/free-icon/circle-facebook_318-10967.jpg");
-      background-position: center;
-      background-size: contain;
-    }
-    #sm-bubble-tw {
-      background-image: url("https://image.freepik.com/free-icon/social-twitter-in-acircle-logo_318-28676.jpg");
-      background-position: center;
-      background-size: contain;
-    }
-    #sm-bubble-ig {
-      background-image: url("https://i0.wp.com/www.traveloffpath.com/wp-content/uploads/2017/11/instagram-icon-white-on-black-circle.png?ssl=1");
-      background-position: center;
-      background-size: contain;
-    }
-    #sm-bubble-pt {
-      background-image: url("https://image.freepik.com/free-icon/pinterest-round_318-26597.jpg");
-      background-position: center;
-      background-size: contain;
+  .banner2active {
+    #ind2 {
+      background-color: $ColorWhite;
     }
   }
-}
 
-.arrow-container {
-  position: absolute;
-  //background-color: black;
-  width: 200px;
-  height: 300px;
-  margin: auto;
-  top: 200px;
-  left: 230px;
-  bottom: 0;
-}
-
-.arrow {
-  opacity: 0;
-  position: relative;
-  left: 42%;
-  top: 55%;
-  transition: visibility 500ms linear;
-}
-
-.arrow1 {
-  animation: arrow-movement 2s ease-in-out infinite;
-}
-.arrow2 {
-  animation: arrow-movement 2s 1s ease-in-out infinite;
-}
-
-.arrow:before,
-.arrow:after {
-  background: #fff;
-  content: '';
-  display: block;
-  height: 3px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-}
-
-.arrow:before {
-  transform: rotate(45deg) translateX(-23%);
-  transform-origin: top left;
-}
-
-.arrow:after {
-  transform: rotate(-45deg) translateX(23%);
-  transform-origin: top right;
-}
-
-// Animation
-@keyframes arrow-movement {
-  0% {
-    opacity: 0;
-    top: 45%;
+  .banner3active {
+    #ind3 {
+      background-color: $ColorWhite;
+    }
   }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
-#home-indicator-container {
-  position: fixed;
-  height: 90px;
-  color: $ColorWhite;
-  margin: auto;
-  top:0;
-  bottom: 0;
-  left: 140px;
-
-  .ind {
-    margin: 5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    border: solid $ColorWhite 2px;
-    opacity: 0.6;
-  }
-}
-
-.banner1active {
-  #ind1 {
-    background-color: $ColorWhite;
-  }
-}
-
-.banner2active {
-  #ind2 {
-    background-color: $ColorWhite;
-  }
-}
-
-.banner3active {
-  #ind3 {
-    background-color: $ColorWhite;
-  }
-}
-
-.banner4active {
-  #ind4 {
-    background-color: $ColorWhite;
+  .banner4active {
+    #ind4 {
+      background-color: $ColorWhite;
+    }
   }
 }
 </style>
