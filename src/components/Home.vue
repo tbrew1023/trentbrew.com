@@ -105,6 +105,7 @@ export default {
     background-color: #3F51B5;
     width: 100%;
     height: 100vh;
+    //font-family: Roboto, sans-serif;
   }
 
   #home-container-inner {
@@ -116,20 +117,20 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
-
-      p {
-        opacity: 0.6;
-      }
     }
 
     #banner1 {
       background-color: #1565C0;
-      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited).jpg");
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/trentbrew-backsplash(2).png");
+
+      h2 {
+        font-size: 60px;
+      }
     }
 
     #banner2 {
       background-color: #0D47A1;
-      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited)-extra3.jpg");
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/trentbrew-backsplash-geometric(2).png");
     }
 
     #banner3 {
@@ -146,20 +147,24 @@ export default {
       color: $ColorLightGray;
       text-align: left;
       width: 420px;
-      margin: 0px 0px 0px 300px;
+      margin: 0px 0px 0px 280px;
 
       p {
         line-height: 25px;
+        color: $ColorText;
+        opacity: 0.6;
       }
 
       a {
-        color: $ColorWhite;
+        color: $ColorText;
       }
 
       h2 {
         margin: 0px;
         padding: 0px;
-        font-size: 40px;
+        font-size: 55px;
+        color: $ColorText;
+        //opacity: 0.6;
       }
     }
 
@@ -226,8 +231,9 @@ export default {
     height: 300px;
     margin: auto;
     top: 200px;
-    left: 230px;
+    left: 210px;
     bottom: 0;
+    opacity: 0.6;
   }
 
   .arrow {
@@ -247,10 +253,10 @@ export default {
 
   .arrow:before,
   .arrow:after {
-    background: #fff;
+    background: $ColorText;
     content: '';
     display: block;
-    height: 3px;
+    height: 1px;
     position: absolute;
     top: 0;
     left: 0;
@@ -284,7 +290,7 @@ export default {
   #home-indicator-container {
     position: fixed;
     height: 90px;
-    color: $ColorWhite;
+    color: $ColorText;
     margin: auto;
     top:0;
     bottom: 0;
@@ -292,35 +298,35 @@ export default {
 
     .ind {
       margin: 5px;
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 100%;
-      border: solid $ColorWhite 2px;
+      border: solid $ColorText 1px;
       opacity: 0.6;
     }
   }
 
   .banner1active {
     #ind1 {
-      background-color: $ColorWhite;
+      background-color: $ColorText;
     }
   }
 
   .banner2active {
     #ind2 {
-      background-color: $ColorWhite;
+      background-color: $ColorText;
     }
   }
 
   .banner3active {
     #ind3 {
-      background-color: $ColorWhite;
+      background-color: $ColorText;
     }
   }
 
   .banner4active {
     #ind4 {
-      background-color: $ColorWhite;
+      background-color: $ColorText;
     }
   }
 }

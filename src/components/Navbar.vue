@@ -2,7 +2,7 @@
   <div id="navbar-container">
     <ul>
       <router-link v-for="tab in tabs" v-on:click.native="handleClick(tab)" :to="tab.path">
-        <li :id="tab.title" :class="{selected: tab.selected}"><span>{{tab.title}}</span></li>
+        <li :id="tab.title" class="tab" :class="{selected: tab.selected}"><span>{{tab.title}}</span></li>
       </router-link>
     </ul>
   </div>
@@ -60,7 +60,7 @@ export default {
   line-height: $NavHeight;
   padding: 10px 0px 0px 0px;
   z-index: 10;
-  box-shadow: inset 0px 45px 40px -20px rgba(0,0,0,0.2);
+  //box-shadow: inset 0px 45px 40px -20px rgba(0,0,0,0.2);
 
   ul {
     display: inline-flex;
@@ -75,27 +75,15 @@ export default {
       transition: 150ms;
     }
 
-    #Home:hover {
+    .tab {
       span {
-        color: #64B5F6;
+        opacity: 0.5;
       }
-    }
 
-    #Portfolio:hover {
-      span {
-        color: #ef9a9a;
-      }
-    }
-
-    #Resume:hover {
-      span {
-        color: #A5D6A7;
-      }
-    }
-
-    #Contact:hover {
-      span {
-        color: #FFF176;
+      &:hover {
+        span {
+          opacity: 1;
+        }
       }
     }
   }
@@ -106,16 +94,18 @@ export default {
 
     span {
       font-size: $NavFontSize;
-      font-weight: bold;
+      font-weight: normal;
       padding: 0px 0px 10px 0px;
-      color: $ColorWhite;
+      color: $ColorText;
       transition: 150ms;
     }
   }
 
   .selected {
     span {
-      border-bottom: solid $IndicatorHeight $ColorWhite;
+      //border-bottom: solid $IndicatorHeight $ColorText;
+      opacity: 1 !important;
+      font-weight: bolder;
     }
   }
 }
