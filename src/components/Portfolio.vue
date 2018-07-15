@@ -39,7 +39,7 @@ export default {
 @media only screen and (min-width: 768px) {
   #portfolio-container {
     position: absolute;
-    background-color: #90A4AE;
+    background-color: $ColorGlobalBackground;
     width: 100%;
     //height: 100vh;
     color: $ColorWhite;

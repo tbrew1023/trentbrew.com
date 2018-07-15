@@ -22,7 +22,7 @@ export default {
 
 #resume-container {
   position: absolute;
-  background-color: #26A69A;
+  background-color: $ColorGlobalBackground;
   width: 100vw;
   height: 100vh;
   color: $ColorWhite;

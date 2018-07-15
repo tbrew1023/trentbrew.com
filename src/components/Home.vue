@@ -98,11 +98,176 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables';
 
+//----------mobile styles----------
+@media only screen and (max-width: 1068px) {
+  #home-container {
+    background-color: $ColorGlobalBackground;
+    color: $ColorText;
+    padding: $NavHeight - 15px 0px 0px 0px;
+  }
 
-@media only screen and (min-width: 768px) {
+  .banner {
+    background-color: blue;
+    height: 100vh;
+    background-position: 78% 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: $ColorGlobalBackground;
+    padding: 100px 0px 0px 0px;
+
+    h2 {
+      margin: 0px;
+    }
+  }
+
+  #banner1 {
+    //background-color: #1565C0;
+    background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(1).png");
+  }
+
+  #banner2 {
+    //background-color: #0D47A1;
+    background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(2).png");
+  }
+
+  #banner3 {
+    //background-color: #1565C0;
+    background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(3).png");
+  }
+
+  #banner4 {
+    //background-color: #0D47A1;
+    background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(4).png");
+  }
+
+  .text {
+    width: 40%;
+    text-align: left;
+    margin: 0px 0px 0px 50px;
+    font-size: 12px;
+
+    a {
+      color: $ColorText;
+    }
+  }
+
+  #text1 {
+    margin-top: 40px;
+  }
+
+  #text4 {
+    margin-top: 110px;
+  }
+
+  .arrow-container {
+    position: absolute;
+    //background-color: black;
+    width:  130px;
+    height: 120px;
+    margin: auto;
+    top: -20px;
+    left: 0;
+    bottom: 0;
+    opacity: 0.6;
+  }
+
+  .arrow {
+    opacity: 0;
+    position: relative;
+    left: 42%;
+    top: 55%;
+    transition: visibility 500ms linear;
+  }
+
+  .arrow1 {
+    animation: arrow-movement 2s ease-in-out infinite;
+  }
+  .arrow2 {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+  }
+
+  .arrow:before,
+  .arrow:after {
+    background: $ColorText;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+  }
+
+  .arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+  }
+
+  .arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+  }
+
+  // Animation
+  @keyframes arrow-movement {
+    0% {
+      opacity: 0;
+      top: 45%;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #social-bubbles {
+    //background-color: red;
+    display: inline-flex;
+
+    .sm-bubble {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: black;
+      opacity: 0.4;
+      margin: 4px;
+
+      &:hover {
+        opacity: 0.2;
+      }
+    }
+
+    #sm-bubble-fb {
+      background-image: url("https://image.freepik.com/free-icon/circle-facebook_318-10967.jpg");
+      background-position: center;
+      background-size: contain;
+    }
+    #sm-bubble-tw {
+      background-image: url("https://image.freepik.com/free-icon/social-twitter-in-acircle-logo_318-28676.jpg");
+      background-position: center;
+      background-size: contain;
+    }
+    #sm-bubble-ig {
+      background-image: url("https://i0.wp.com/www.traveloffpath.com/wp-content/uploads/2017/11/instagram-icon-white-on-black-circle.png?ssl=1");
+      background-position: center;
+      background-size: contain;
+    }
+    #sm-bubble-pt {
+      background-image: url("https://image.freepik.com/free-icon/pinterest-round_318-26597.jpg");
+      background-position: center;
+      background-size: contain;
+    }
+  }
+}
+
+//----------tablet styles----------
+@media only screen and (min-width: 1068px) {
   #home-container {
     position: absolute;
-    background-color: #3F51B5;
+    background-color: $ColorGlobalBackground;
     width: 100%;
     height: 100vh;
     //font-family: Roboto, sans-serif;
@@ -117,11 +282,12 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
+      background-color: $ColorGlobalBackground;
     }
 
     #banner1 {
-      background-color: #1565C0;
-      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/trentbrew-backsplash(2).png");
+      //background-color: #1565C0;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(1).png");
 
       h2 {
         font-size: 60px;
@@ -129,25 +295,25 @@ export default {
     }
 
     #banner2 {
-      background-color: #0D47A1;
-      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/trentbrew-backsplash-geometric(2).png");
+      //background-color: #0D47A1;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(2).png");
     }
 
     #banner3 {
-      background-color: #1565C0;
-      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited)-extra2.jpg");
+      //background-color: #1565C0;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(3).png");
     }
 
     #banner4 {
-      background-color: #0D47A1;
-      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banner1-img(edited)-extra1.jpg");
+      //background-color: #0D47A1;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(4).png");
     }
 
     .text {
       color: $ColorLightGray;
       text-align: left;
       width: 420px;
-      margin: 0px 0px 0px 280px;
+      margin: 0px 0px 0px 180px;
 
       p {
         line-height: 25px;
@@ -231,7 +397,7 @@ export default {
     height: 300px;
     margin: auto;
     top: 200px;
-    left: 210px;
+    left: 110px;
     bottom: 0;
     opacity: 0.6;
   }
@@ -294,7 +460,241 @@ export default {
     margin: auto;
     top:0;
     bottom: 0;
-    left: 140px;
+    left: 90px;
+
+    .ind {
+      margin: 5px;
+      width: 7px;
+      height: 7px;
+      border-radius: 100%;
+      border: solid $ColorText 1px;
+      opacity: 0.6;
+    }
+  }
+
+  .banner1active {
+    #ind1 {
+      background-color: $ColorText;
+    }
+  }
+
+  .banner2active {
+    #ind2 {
+      background-color: $ColorText;
+    }
+  }
+
+  .banner3active {
+    #ind3 {
+      background-color: $ColorText;
+    }
+  }
+
+  .banner4active {
+    #ind4 {
+      background-color: $ColorText;
+    }
+  }
+}
+
+//----------desktop styles----------768
+@media only screen and (min-width: 1668px) {
+  #home-container {
+    position: absolute;
+    background-color: $ColorGlobalBackground;
+    width: 100%;
+    height: 100vh;
+    //font-family: Roboto, sans-serif;
+  }
+
+  #home-container-inner {
+    margin: 0px 0px 0px 0px;
+
+    .banner {
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-color: $ColorGlobalBackground;
+    }
+
+    #banner1 {
+      //background-color: #1565C0;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(1).png");
+
+      h2 {
+        font-size: 60px;
+      }
+    }
+
+    #banner2 {
+      //background-color: #0D47A1;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(2).png");
+    }
+
+    #banner3 {
+      //background-color: #1565C0;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(3).png");
+    }
+
+    #banner4 {
+      //background-color: #0D47A1;
+      background-image: url("http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/trentbrew-ps/res/banners/trentbrew-backsplash(4).png");
+    }
+
+    .text {
+      color: $ColorLightGray;
+      text-align: left;
+      width: 420px;
+      margin: 0px 0px 0px 380px;
+
+      p {
+        line-height: 25px;
+        color: $ColorText;
+        opacity: 0.6;
+      }
+
+      a {
+        color: $ColorText;
+      }
+
+      h2 {
+        margin: 0px;
+        padding: 0px;
+        font-size: 55px;
+        color: $ColorText;
+        //opacity: 0.6;
+      }
+    }
+
+    #text1 {
+      padding-top: 40vh;
+    }
+
+    #text2 {
+      padding-top: 28vh;
+    }
+
+    #text3 {
+      padding-top: 29vh;
+    }
+
+    #text4 {
+      padding-top: 35vh;
+    }
+
+    #social-bubbles {
+      //background-color: red;
+      display: inline-flex;
+
+      .sm-bubble {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: black;
+        opacity: 0.4;
+        margin: 4px;
+
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+
+      #sm-bubble-fb {
+        background-image: url("https://image.freepik.com/free-icon/circle-facebook_318-10967.jpg");
+        background-position: center;
+        background-size: contain;
+      }
+      #sm-bubble-tw {
+        background-image: url("https://image.freepik.com/free-icon/social-twitter-in-acircle-logo_318-28676.jpg");
+        background-position: center;
+        background-size: contain;
+      }
+      #sm-bubble-ig {
+        background-image: url("https://i0.wp.com/www.traveloffpath.com/wp-content/uploads/2017/11/instagram-icon-white-on-black-circle.png?ssl=1");
+        background-position: center;
+        background-size: contain;
+      }
+      #sm-bubble-pt {
+        background-image: url("https://image.freepik.com/free-icon/pinterest-round_318-26597.jpg");
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+
+  .arrow-container {
+    position: absolute;
+    //background-color: black;
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    top: 200px;
+    left: 310px;
+    bottom: 0;
+    opacity: 0.6;
+  }
+
+  .arrow {
+    opacity: 0;
+    position: relative;
+    left: 42%;
+    top: 55%;
+    transition: visibility 500ms linear;
+  }
+
+  .arrow1 {
+    animation: arrow-movement 2s ease-in-out infinite;
+  }
+  .arrow2 {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+  }
+
+  .arrow:before,
+  .arrow:after {
+    background: $ColorText;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+  }
+
+  .arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+  }
+
+  .arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+  }
+
+  // Animation
+  @keyframes arrow-movement {
+    0% {
+      opacity: 0;
+      top: 45%;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #home-indicator-container {
+    position: fixed;
+    height: 90px;
+    color: $ColorText;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    left: 290px;
 
     .ind {
       margin: 5px;

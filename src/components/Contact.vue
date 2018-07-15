@@ -29,10 +29,10 @@ export default {
 
 #contact-container {
   position: absolute;
-  background-color: #FF8F00;
+  background-color: $ColorGlobalBackground;
   width: 100vw;
   height: 100vh;
-  color: $ColorWhite;
+  color: $ColorText;
 }
 
 #contact-container-inner {
@@ -53,7 +53,7 @@ h2 {
 p {
   padding: 0px;
   margin: 0px 0px 60px 0px;
-  color: $ColorWhite;
+  color: $ColorText;
   opacity: 0.6;
 }
 

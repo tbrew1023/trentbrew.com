@@ -51,61 +51,191 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables';
 
-#navbar-container {
-  position: fixed;
-  top: 0px;
-  //background-color: $ColorPrimary;
-  width: 100%;
-  height: $NavHeight;
-  line-height: $NavHeight;
-  padding: 10px 0px 0px 0px;
-  z-index: 10;
-  //box-shadow: inset 0px 45px 40px -20px rgba(0,0,0,0.2);
+//----------mobile styles----------
+@media only screen and (max-width: 1068px) {
+  #navbar-container {
+    position: fixed;
+    top: 0px;
+    //background-color: $ColorPrimary;
+    width: 100%;
+    height: $NavHeight - 15px;
+    line-height: $NavHeight;
+    padding: 0px 0px 0px 0px;
+    z-index: 10;
+    background-color: $ColorGlobalBackground;
+    box-shadow: 0px 10px 25px 25px $ColorGlobalBackground;
 
-  ul {
-    display: inline-flex;
-    list-style: none;
-    margin: 0px;
-    padding: 0px 0px 0px 30px;
+    ul {
+      display: inline-flex;
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
 
-    li {
-      margin: 0px 5px 0px 0px;
-      padding: 0px 15px 0px 15px;
-      border-radius: $Rounded;
-      transition: 150ms;
-    }
-
-    .tab {
-      span {
-        opacity: 0.5;
+      li {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 15px 0px 15px;
+        border-radius: $Rounded;
+        transition: 150ms;
       }
 
-      &:hover {
+      .tab {
         span {
-          opacity: 1;
+          opacity: 0.5;
+        }
+
+        &:hover {
+          span {
+            opacity: 1;
+          }
         }
       }
     }
-  }
 
-  a {
-    text-decoration: none;
-    outline: 0;
+    a {
+      text-decoration: none;
+      outline: 0;
 
-    span {
-      font-size: $NavFontSize;
-      font-weight: normal;
-      padding: 0px 0px 10px 0px;
-      color: $ColorText;
-      transition: 150ms;
+      span {
+        font-size: 11px;
+        font-weight: normal;
+        padding: 0px 0px 10px 0px;
+        color: $ColorText;
+        transition: 150ms;
+      }
+    }
+
+    .selected {
+      span {
+        //border-bottom: solid $IndicatorHeight $ColorText;
+        opacity: 1 !important;
+        font-weight: bolder;
+      }
     }
   }
+}
 
-  .selected {
-    span {
-      //border-bottom: solid $IndicatorHeight $ColorText;
-      opacity: 1 !important;
-      font-weight: bolder;
+//----------tablet styles----------
+@media only screen and (min-width: 1068px) {
+  #navbar-container {
+    position: fixed;
+    top: 0px;
+    //background-color: $ColorPrimary;
+    width: 100%;
+    height: $NavHeight;
+    line-height: $NavHeight;
+    padding: 10px 0px 0px 0px;
+    z-index: 10;
+    //box-shadow: inset 0px 45px 40px -20px rgba(0,0,0,0.2);
+
+    ul {
+      display: inline-flex;
+      list-style: none;
+      margin: 0px;
+      float: right;
+      padding: 40px 100px 0px 0px;
+
+      li {
+        margin: 0px 5px 0px 0px;
+        padding: 0px 15px 0px 15px;
+        border-radius: $Rounded;
+        transition: 150ms;
+      }
+
+      .tab {
+        span {
+          opacity: 0.5;
+        }
+
+        &:hover {
+          span {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      outline: 0;
+
+      span {
+        font-size: $NavFontSize;
+        font-weight: normal;
+        padding: 0px 0px 10px 0px;
+        color: $ColorText;
+        transition: 150ms;
+      }
+    }
+
+    .selected {
+      span {
+        //border-bottom: solid $IndicatorHeight $ColorText;
+        opacity: 1 !important;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+//----------desktop styles----------
+@media only screen and (min-width: 1669px) {
+  #navbar-container {
+    position: fixed;
+    top: 0px;
+    //background-color: $ColorPrimary;
+    width: 100%;
+    height: $NavHeight;
+    line-height: $NavHeight;
+    padding: 10px 0px 0px 0px;
+    z-index: 10;
+    //box-shadow: inset 0px 45px 40px -20px rgba(0,0,0,0.2);
+
+    ul {
+      display: inline-flex;
+      list-style: none;
+      margin: 0px;
+      float: right;
+      padding: 40px 200px 0px 0px;
+
+      li {
+        margin: 0px 5px 0px 0px;
+        padding: 0px 15px 0px 15px;
+        border-radius: $Rounded;
+        transition: 150ms;
+      }
+
+      .tab {
+        span {
+          opacity: 0.5;
+        }
+
+        &:hover {
+          span {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      outline: 0;
+
+      span {
+        font-size: $NavFontSize;
+        font-weight: normal;
+        padding: 0px 0px 10px 0px;
+        color: $ColorText;
+        transition: 150ms;
+      }
+    }
+
+    .selected {
+      span {
+        //border-bottom: solid $IndicatorHeight $ColorText;
+        opacity: 1 !important;
+        font-weight: bolder;
+      }
     }
   }
 }
